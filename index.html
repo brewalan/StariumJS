@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Starium</title>
+    <!-- Bootstrap styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Starium scripts -->
+    <script async src="settings.js"></script>
+    <script async src="stariumObject.js"></script>
+    <script async src="tableau.js"></script>
+    <script async src="starium.js"></script>
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['disableCookies']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="https://analytics.theconjugator.com/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '4']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+    <!-- Game custom style -->
+    <style>
+        #tableau,#sector,#info,#damage  {
+            line-height: 95%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="p-5 bg-primary text-white text-center">
+            <h1>Starium game</h1>
+            <p>Resize this responsive page to see the effect!</p> 
+        </div>
+        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="javascript:startGame()">Nouvelle partie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:refreshGame()">Refresh</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:testGame()">Damage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <!-- main screen -->
+    <section class="section">
+
+        <div class="row">
+            <!-- left section part -->
+            <div class="col-3">
+                <h2>Endurci</h2>
+                <h5>Information</h5>
+                <div id="info">&nbsp;</div>
+
+                <h5>Dégâts</h5>
+                <div id="damage">&nbsp;</div>
+            </div>
+            <!-- main screen -->
+            <div class="col-9">
+                <h2>Tableau</h2>
+                <h5>Voici ce qui est présent à proximité</h5>
+                <div id="tableau" class="font-monospace">&nbsp;</div>
+                <h5>Derniers messages</h5>
+                <div id="message">&nbsp;</div>
+            </div>
+
+        </div>
+
+        <!-- second line -->
+        <div class="row">
+            <div class="col-3">
+                <h5>Commandes</h5>
+                <div class="d-grid gap-1">
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveTableau">Mouvement tableau</button>
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveSector">Mouvement secteur</button>
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPhaser">Laser</button>
+                    <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalTorpedo">Torpille</button>
+                    <button class="btn btn-info btn-sm" onclick="javascript:cmdRadar()">Radar</button>
+                    <button class="btn btn-info btn-sm" onclick="javascript:cmdProbe()">Sonde</button>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalShield">Bouclier</button>
+                    <button class="btn btn-warning btn-sm" onclick="javascript:cmdPass()">Passer son tour</button>
+                </div>
+            </div>
+            <div class="col-3">
+                <h2>Secteur&nbsp;local</h2>
+                <div id="sector" class="font-monospace">&nbsp;</div>
+            </div>
+            <div class="col-5">
+                <div id="probe">&nbsp;</div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="mt-5 p-4 bg-dark text-white text-center">
+            <p>Footer</p>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Modal Shield -->
+    <div class="modal fade" id="modalShield" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalShieldLabel">Taux du bouclier</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Indiquez le nouveau taux de bouclier entre 1 et 99%</p>
+                    <p class="text-center">
+                        <input class="form-control-sm text-end" type="input" id="inputShieldRate"> %
+                    </p>
+                    <p class="fst-italic">Attention, un taux de bouclier trop élevé peut avoir un impact sur votre énergie disponible pour les autres fonctions.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdShield()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Move Sector -->
+    <div class="modal fade" id="modalMoveSector" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalMoveSectorLabel">Mouvement Secteur</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Distance du déplacement (1 à 12)</p>
+                    <p>
+                        <input class="form-control-sm text-end" type="input" id="inputDistanceSector">
+                    </p>
+                    <p>Direction en degré (0 à 360)</p>
+                    <p>
+                        <input class="form-control-sm text-end" type="input" id="inputDirectionSector">
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdMoveSector()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Move Sector -->
+    <div class="modal fade" id="modalMoveTableau" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalMoveTableauLabel">Mouvement Tableau</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Distance du déplacement (1 à 12)</p>
+                    <p>
+                        <input class="form-control-sm text-end" type="input" id="inputDistanceTableau">
+                    </p>
+                    <p>Direction en degré (0 à 360)</p>
+                    <p>
+                        <input class="form-control-sm text-end" type="input" id="inputDirectionTableau">
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdMoveTableau()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Phaser -->
+    <div class="modal fade" id="modalPhaser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalPhaserLabel">Laser</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Indiquez la puissance du Laser</p>
+                    <p class="text-center">
+                        <input class="form-control-sm text-end" type="input" id="inputPhaser">
+                    </p>
+                    <p class="fst-italic">Attention, le laser utilise l'énergie de vos batteries, assurez-vous de gardez suffisamment d'énergie pour ne pas être en difficulté pour la suite.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdPhaser()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Torpedo -->
+    <div class="modal fade" id="modalTorpedo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalTorpedoLabel">Torpille</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Indiquez la direction de la torpille en degré (0 à 360)</p>
+                    <p class="text-center">
+                        <input class="form-control-sm text-end" type="input" id="inputTorpedo">
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdTorpedo()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
