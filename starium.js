@@ -94,6 +94,24 @@ function resetAction() {
     refreshGame();
 }
 
+/* check condition for victory */
+function checkVictory() {
+    /* check if Endurci is destroyed */
+    if (tableau.endurci.status == ObjectStatus.destroyed) {
+        var modalLose = new bootstrap.Modal(document.getElementById('modalEndLose'), {
+            keyboard: false
+          })      
+        modalLose.show();
+    }
+    /* check Victory */
+    if (tableau.getNumKipick()==0) {
+        var modalEndWin = new bootstrap.Modal(document.getElementById('modalEndWin'), {
+            keyboard: false
+          })      
+          modalEndWin.show();        
+    }
+}
+
 /* end turn and move date after all objects played */
 function endTurn() {
     /* check if some Kipicks must play */
@@ -108,6 +126,7 @@ function endTurn() {
         tableau.resetPlayTurn();
     }
     refreshGame();
+    checkVictory();
 }
 /* function to management the events : movement, phaser, torpedo */
 function nextTurn() {
@@ -394,19 +413,26 @@ function cmdStartGame() {
 
     /* check requested parameters */
     let inputStartKipick = parseInt(inputStartKipickTxt);
-    if ((inputStartKipick<1) || (inputStartKipick>MAX_KIPICK)) {
+    if ((inputStartKipick<1) || (inputStartKipick>MAX_KIPICK) || (isNaN(inputStartKipick))) {
         addMessage(TEXT_KIPICK_ERROR);
+        refreshGame();
         return;
     }
     let inputStartBase = parseInt(inputStartBaseTxt);
-    if ((inputStartBase<1) || (inputStartBase>MAX_BASE)) {
+    if ((inputStartBase<1) || (inputStartBase>MAX_BASE) || (isNaN(inputStartBase))) {
         addMessage(TEXT_BASE_ERROR);
+        refreshGame();
         return;
     }    
 
     /* start the game */
     NO_KIPICK = inputStartKipick; 
     NO_BASE = inputStartBase; 
+    startGame();
+}
+
+/* starting the game */
+function startGame() {
     tableau = new Tableau();
     message = [];
     addMessage(TEXT_WELCOME);
@@ -423,9 +449,20 @@ function refreshGame() {
     document.getElementById("inputShieldRate").value=tableau.endurci.shieldRate;
 }
 
+/* closing the game */
+function cmdCloseGame() {
+    /* TO DO */
+}
+
 /* generate a dommage for testing */
 function generateDamage() {
     tableau.endurci.generateDamage(50);
+    refreshGame();
+}
+
+/* generate a collison for testing */
+function generateCollision() {
+    tableau.endurci.collision(500);
     refreshGame();
 }
 

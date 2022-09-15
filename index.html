@@ -57,7 +57,7 @@
                 <a class="nav-link" href="javascript:generateDamage()">Damage</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+                <a class="nav-link" href="javascript:generateCollision()">Choc</a>
             </li>
             </ul>
         </div>
@@ -268,6 +268,42 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdStartGame()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Victory -->
+    <div class="modal fade" id="modalEndWin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalStartLabel">Victoire</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Bravo ! Vous avez gagné.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lose -->
+    <div class="modal fade" id="modalEndLose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalStartLabel">Perdu</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Votre vaisseau a été détruit. Vous avez perdu !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
                 </div>
             </div>
         </div>
