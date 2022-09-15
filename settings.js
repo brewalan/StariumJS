@@ -12,8 +12,10 @@ const SECTOR_MAX_Y = 10;
 const MAX_STAR_SECTOR = 9;
 const MAX_KIPICK_SECTOR = 9;
 
-const NO_BASE = 20;
-const NO_KIPICK = 200;
+const MAX_BASE = 20;
+const MAX_KIPICK = 200;
+let NO_BASE = MAX_BASE;
+let NO_KIPICK = MAX_KIPICK;
 
 const KIPICK_ENERGY = 800;
 const KIPICK_SHIELD = 500;
@@ -108,6 +110,7 @@ const TEXT_ALERT_YELLOW = "jaune";
 const TEXT_ALERT_RED = "rouge";
 const TEXT_ALERT_CRITICAL = "critique";
 const TEXT_DAMAGED = "endommagé(e) pour";
+const TEXT_REPAIRED = "réparé(e)";
 const TEXT_WELCOME = "Bonne chance pour votre mission";
 const TEXT_PROBE = "Rapport de la sonde au ";
 const TEXT_TYPE = "Type";
@@ -131,6 +134,8 @@ const TEXT_NO_TORPEDO_LEFT = "Stock de torpille épuisé";
 const TEXT_SEND_TORPEDO = "lance une torpille";
 const TEXT_SEND_PHASER = "utilise le laser";
 const TEXT_KIPICK_MOVE = "fait un mouvement"
+const TEXT_KIPICK_ERROR = "Nombre de Kipick incorrect";
+const TEXT_BASE_ERROR = "Nombre de Base incorrecte";
 
 /* all damage text */
 const TEXT_FONCTION = [

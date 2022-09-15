@@ -103,6 +103,7 @@ function endTurn() {
     } else {
         /* ending turn */
         tableau.endTurnEnergy();
+        tableau.repair();
         tableau.setNextMonth();
         tableau.resetPlayTurn();
     }
@@ -385,9 +386,27 @@ function cmdTorpedo() {
     nextTurn();
 }
 
-/* *************** */
-/* start the game */
-function startGame() {
+/* **************** */
+/* Start a new game */
+function cmdStartGame() {
+    let inputStartKipickTxt = document.getElementById("inputStartKipick").value;
+    let inputStartBaseTxt = document.getElementById("inputStartBase").value;
+
+    /* check requested parameters */
+    let inputStartKipick = parseInt(inputStartKipickTxt);
+    if ((inputStartKipick<1) || (inputStartKipick>MAX_KIPICK)) {
+        addMessage(TEXT_KIPICK_ERROR);
+        return;
+    }
+    let inputStartBase = parseInt(inputStartBaseTxt);
+    if ((inputStartBase<1) || (inputStartBase>MAX_BASE)) {
+        addMessage(TEXT_BASE_ERROR);
+        return;
+    }    
+
+    /* start the game */
+    NO_KIPICK = inputStartKipick; 
+    NO_BASE = inputStartBase; 
     tableau = new Tableau();
     message = [];
     addMessage(TEXT_WELCOME);
@@ -404,10 +423,15 @@ function refreshGame() {
     document.getElementById("inputShieldRate").value=tableau.endurci.shieldRate;
 }
 
+/* generate a dommage for testing */
+function generateDamage() {
+    tableau.endurci.generateDamage(50);
+    refreshGame();
+}
+
+/* ************************/
 /* start game when loaded */
 window.onload=function()
 {
     startGame();
 }
-
-

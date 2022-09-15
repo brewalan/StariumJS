@@ -136,6 +136,23 @@ class StariumObject {
         this.energy-=sign*energyTransfer;
         this.shield+=sign*energyTransfer;
     }
+
+    /* do the repair if needed */
+    repair() {
+        for(let i=0;i<DAMAGE_MAX;i++) {
+            if (this.damage[i]>0) {
+                this.damage[i]--;
+                /* check if fully repaired */
+                if ((this.generateMessage) && (this.damage[i]==0)) {
+                    let msg = TEXT_FONCTION[i];
+                    msg += " ";
+                    msg += TEXT_REPAIRED;
+                    addMessage(msg);
+                } 
+            }
+        }        
+    }
+
 }
 
 /* Class to manage a star */

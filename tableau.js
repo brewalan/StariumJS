@@ -617,6 +617,14 @@ class Tableau {
         }
     }
 
+    /* repair the different objects if needed */
+    repair() {
+        for(const currentObject of this.obj) {
+            currentObject.repair();
+        }    
+        this.endurci.repair();    
+    }
+
     /* ************************* */
     /* generate command */
 

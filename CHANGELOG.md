@@ -22,5 +22,10 @@ straightforward as possible.
 
 Initial version with the first developments
 
+## [0.2.0] - 2022-09-15
+
+Add modal to start game
+Add repair when objects is damaged
+
 ### Changed
   
