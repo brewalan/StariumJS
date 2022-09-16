@@ -136,6 +136,22 @@ const TEXT_SEND_PHASER = "utilise le laser";
 const TEXT_KIPICK_MOVE = "fait un mouvement"
 const TEXT_KIPICK_ERROR = "Nombre de Kipick incorrect";
 const TEXT_BASE_ERROR = "Nombre de Base incorrecte";
+const TEXT_COMMAND_NOT_FOUND = "commande inconnue";
+const TEXT_CMD_NUM = "Numéro";
+const TEXT_CMD_DESCR = "Nom de la commande";
+const TEXT_CMD1_TABLEAU = "Mouvement tableau";
+const TEXT_CMD1_SECTOR = "Mouvement secteur";
+const TEXT_CMD2 = "Duration : passer plusieurs tours";
+const TEXT_CMD3 = "Radar : scanner les alentours";
+const TEXT_CMD4 = "Envoyer un rayon laser";
+const TEXT_CMD5 = "Envoyer une torpille";
+const TEXT_CMD8 = "Envoyer une sonde";
+const TEXT_CMD9 = "Duration : passer son tour";
+const TEXT_CMD11 = "Afficher ce menu";
+const TEXT_CMD12 = "Passer un tour";
+const TEXT_NB_ERROR = "Entrez un nombre correct";
+const TEXT_DURATION_NOT_POSSIBLE = "Duration impossible pendant une alerte rouge";
+
 
 /* all damage text */
 const TEXT_FONCTION = [
