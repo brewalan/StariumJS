@@ -334,10 +334,11 @@ class Tableau {
     }
 
     /* Format display info */
-    getDisplayInfo(txt,val) {
-        let htmlResult = "<tr><td>";
-        htmlResult+=txt;
-        htmlResult+="</td><td class='text-end'>";
+    getDisplayInfo(icon,txt,val) {
+        let htmlResult = "<tr>";
+        htmlResult+="<td>"+icon+"</td>";
+        htmlResult+="<td>"+txt+"</td>";
+        htmlResult+="<td class='text-end'>";
         htmlResult+=val;
         htmlResult+="</td></tr>";
         return htmlResult;
@@ -360,16 +361,16 @@ class Tableau {
     /* display information on Endurci status */
     displayInfo() {
         let htmlResult = "<table>";
-        htmlResult+=this.getDisplayInfo(TEXT_GALACTIC_YEAR,this.getGalacticTime());
-        htmlResult+=this.getDisplayInfo(TEXT_COO_GLOBALE,this.getCoo(this.endurci.globalX,this.endurci.globalY));
-        htmlResult+=this.getDisplayInfo(TEXT_COO_LOCALE,this.getCoo(this.endurci.localX,this.endurci.localY));
-        htmlResult+=this.getDisplayInfo(TEXT_ALERT,this.getAlertLevel());
-        htmlResult+=this.getDisplayInfo(TEXT_SHIELD_RATE,this.endurci.shieldRate+"%");
-        htmlResult+=this.getDisplayInfo(TEXT_SHIELD_ENERGY,this.endurci.shield);
-        htmlResult+=this.getDisplayInfo(TEXT_ENERGY,this.endurci.energy);
-        htmlResult+=this.getDisplayInfo(ICON_TORPEDO+" "+TEXT_TORPEDOES,this.endurci.torpedo + " / "+ENDURCI_TORPEDO);
-        htmlResult+=this.getDisplayInfo(ICON_BASE+" "+TEXT_REMAINING_BASE,this.getNumBase() + " / "+NO_BASE);
-        htmlResult+=this.getDisplayInfo(ICON_KIPICK+" "+TEXT_REMAINING_KIPICK,this.getNumKipick() + " / "+NO_KIPICK);
+        htmlResult+=this.getDisplayInfo(ICON_CALENDAR,TEXT_GALACTIC_YEAR,this.getGalacticTime());
+        htmlResult+=this.getDisplayInfo(ICON_COO_GLOBALE,TEXT_COO_GLOBALE,this.getCoo(this.endurci.globalX,this.endurci.globalY));
+        htmlResult+=this.getDisplayInfo(ICON_COO_LOCALE,TEXT_COO_LOCALE,this.getCoo(this.endurci.localX,this.endurci.localY));
+        htmlResult+=this.getDisplayInfo(ICON_ALERT,TEXT_ALERT,this.getAlertLevel());
+        htmlResult+=this.getDisplayInfo(ICON_SHIELD_RATE,TEXT_SHIELD_RATE,this.endurci.shieldRate+"%");
+        htmlResult+=this.getDisplayInfo(ICON_SHIELD,TEXT_SHIELD_ENERGY,this.endurci.shield);
+        htmlResult+=this.getDisplayInfo(ICON_ENERGY,TEXT_ENERGY,this.endurci.energy);
+        htmlResult+=this.getDisplayInfo(ICON_TORPEDO,TEXT_TORPEDOES,this.endurci.torpedo + " / "+ENDURCI_TORPEDO);
+        htmlResult+=this.getDisplayInfo(ICON_BASE,TEXT_REMAINING_BASE,this.getNumBase() + " / "+NO_BASE);
+        htmlResult+=this.getDisplayInfo(ICON_KIPICK,TEXT_REMAINING_KIPICK,this.getNumKipick() + " / "+NO_KIPICK);
         htmlResult+="</table>";
         return htmlResult;
     }
@@ -680,11 +681,11 @@ class Tableau {
         /* browse all objects to be displayed in the grid */
         htmlResult+="<table class='table text-center'>";
         htmlResult+="<thead>";
-        htmlResult+="<th scope='col'>"+TEXT_TYPE+"</th>";
-        htmlResult+="<th scope='col'>"+TEXT_COO_LOCALE+"</th>";
-        htmlResult+="<th scope='col'>"+TEXT_SHIELD_ENERGY+"</th>";
-        htmlResult+="<th scope='col'>"+TEXT_ENERGY+"</th>";
-        htmlResult+="<th scope='col'>"+TEXT_TORPEDO+"</th>";
+        htmlResult+="<th scope='col'>"+ICON_KIPICK+" "+TEXT_TYPE+"</th>";
+        htmlResult+="<th scope='col'>"+ICON_COO_LOCALE+" "+TEXT_COO_LOCALE+"</th>";
+        htmlResult+="<th scope='col'>"+ICON_SHIELD+" "+TEXT_SHIELD_ENERGY+"</th>";
+        htmlResult+="<th scope='col'>"+ICON_ENERGY+" "+TEXT_ENERGY+"</th>";
+        htmlResult+="<th scope='col'>"+ICON_TORPEDO+" "+TEXT_TORPEDO+"</th>";
         htmlResult+="</thead>";
         htmlResult+="<tbody>";
         for(const currentObject of sectorObjects) {

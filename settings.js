@@ -159,7 +159,7 @@ const ICON_KIPICK = '<i class="fa-thin fa-starfighter-twin-ion-engine"></i>';
 const ICON_ENDURCI = '<i class="fa-duotone fa-starship"></i>';
 const ICON_ICON_STAR = '<i class="fa-duotone fa-planet-ringed""></i>';
 const ICON_PHASER = '<i class="fa-duotone fa-raygun"></i>';
-const ICON_BATTERY = '<i class="fa-duotone fa-transformer-bolt"></i>';
+const ICON_ENERGY = '<i class="fa-duotone fa-transformer-bolt"></i>';
 const ICON_POWER = '<i class="fa-duotone fa-battery-bolt"></i>';
 const ICON_CRYSTAL = '<i class="fa-duotone fa-crystal-ball"></i>';
 const ICON_SHIELD = '<i class="fa-regular fa-shield-heart"></i>';
@@ -167,6 +167,11 @@ const ICON_PROBE = '<i class="fa-duotone fa-drone-front"></i>';
 const ICON_RADAR_SHORT = '<i class="fa-duotone fa-radar"></i>';
 const ICON_RADAR_LONG = '<i class="fa-duotone fa-satellite-dish"></i>';
 const ICON_ENGINE = '<i class="fa-duotone fa-engine"></i>';
+const ICON_COO_LOCALE = '<i class="fa-duotone fa-location-dot"></i>';
+const ICON_COO_GLOBALE = '<i class="fa-duotone fa-globe"></i>';
+const ICON_CALENDAR = '<i class="fa-duotone fa-calendar-days"></i>';
+const ICON_SHIELD_RATE = '<i class="fa-sharp fa-solid fa-shield-quartered"></i>';
+const ICON_ALERT = '<i class="fa-duotone fa-triangle-exclamation"></i>';
 
 /* all damage text */
 const TEXT_FONCTION = [
