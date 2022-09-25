@@ -639,6 +639,8 @@ function manageTextCmd(cmd) {
                 cmdProbe();
                 break;
             case "11":
+            case "?":
+            case "0":
                 displayCommand();
             case "12":
                 endTurn();

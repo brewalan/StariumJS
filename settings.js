@@ -152,6 +152,21 @@ const TEXT_CMD12 = "Passer un tour";
 const TEXT_NB_ERROR = "Entrez un nombre correct";
 const TEXT_DURATION_NOT_POSSIBLE = "Duration impossible pendant une alerte rouge";
 
+/* Fontawsome icon for the different elements */
+const ICON_TORPEDO = '<i class="fa-duotone fa-rocket-launch"></i>';
+const ICON_BASE = '<i class="fa-duotone fa-satellite"></i>';
+const ICON_KIPICK = '<i class="fa-thin fa-starfighter-twin-ion-engine"></i>';
+const ICON_ENDURCI = '<i class="fa-duotone fa-starship"></i>';
+const ICON_ICON_STAR = '<i class="fa-duotone fa-planet-ringed""></i>';
+const ICON_PHASER = '<i class="fa-duotone fa-raygun"></i>';
+const ICON_BATTERY = '<i class="fa-duotone fa-transformer-bolt"></i>';
+const ICON_POWER = '<i class="fa-duotone fa-battery-bolt"></i>';
+const ICON_CRYSTAL = '<i class="fa-duotone fa-crystal-ball"></i>';
+const ICON_SHIELD = '<i class="fa-regular fa-shield-heart"></i>';
+const ICON_PROBE = '<i class="fa-duotone fa-drone-front"></i>';
+const ICON_RADAR_SHORT = '<i class="fa-duotone fa-radar"></i>';
+const ICON_RADAR_LONG = '<i class="fa-duotone fa-satellite-dish"></i>';
+const ICON_ENGINE = '<i class="fa-duotone fa-engine"></i>';
 
 /* all damage text */
 const TEXT_FONCTION = [

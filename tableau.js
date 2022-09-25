@@ -275,6 +275,23 @@ class Tableau {
             }
             /* check if focus must be done */
             tabFocus[currentObject.localX][currentObject.localY]=currentObject.focus;
+
+
+/*            if (currentObject instanceof Star) {
+                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-planet-ringed"></i>';
+            } else if (currentObject instanceof Base) {
+                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-satellite"></i>';
+            } else if (currentObject instanceof Kipick) {
+                tab[currentObject.localX][currentObject.localY]='<i class="fa-thin fa-starfighter-twin-ion-engine"></i>';
+            } else if (currentObject instanceof Endurci) {
+                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-starship"></i>';
+            } else if (currentObject instanceof Torpedo) {
+                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-rocket-launch"></i>';
+            }
+
+            /* check if focus must be done */
+            //tabFocus[currentObject.localX][currentObject.localY]=currentObject.focus;
+
         }
 
         /* display the result */
@@ -350,16 +367,16 @@ class Tableau {
         htmlResult+=this.getDisplayInfo(TEXT_SHIELD_RATE,this.endurci.shieldRate+"%");
         htmlResult+=this.getDisplayInfo(TEXT_SHIELD_ENERGY,this.endurci.shield);
         htmlResult+=this.getDisplayInfo(TEXT_ENERGY,this.endurci.energy);
-        htmlResult+=this.getDisplayInfo(TEXT_TORPEDOES,this.endurci.torpedo + " / "+ENDURCI_TORPEDO);
-        htmlResult+=this.getDisplayInfo(TEXT_REMAINING_BASE,this.getNumBase() + " / "+NO_BASE);
-        htmlResult+=this.getDisplayInfo(TEXT_REMAINING_KIPICK,this.getNumKipick() + " / "+NO_KIPICK);
+        htmlResult+=this.getDisplayInfo(ICON_TORPEDO+" "+TEXT_TORPEDOES,this.endurci.torpedo + " / "+ENDURCI_TORPEDO);
+        htmlResult+=this.getDisplayInfo(ICON_BASE+" "+TEXT_REMAINING_BASE,this.getNumBase() + " / "+NO_BASE);
+        htmlResult+=this.getDisplayInfo(ICON_KIPICK+" "+TEXT_REMAINING_KIPICK,this.getNumKipick() + " / "+NO_KIPICK);
         htmlResult+="</table>";
         return htmlResult;
     }
 
     /* format the damage info */
-    getDamageInfo(txt,d) {
-        let htmlResult="<tr><td>"+txt+"</td><td>";
+    getDamageInfo(icon,txt,d) {
+        let htmlResult="<tr><td>"+icon+"</td><td>"+txt+"</td><td>";
         let damage = this.endurci.damage[d];
         if (damage==0) {
             htmlResult+="OK";
@@ -375,13 +392,13 @@ class Tableau {
     /* display damage info */
     displayDamageInfo() {
         let htmlResult = "<table>";
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_ENGINE,DAMAGE_ENGINE);
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_LONG_RADAR,DAMAGE_LONG_RADAR);
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_SHORT_RADAR,DAMAGE_SHORT_RADAR);
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_PHASER,DAMAGE_PHASER);
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_TORPEDO,DAMAGE_TORPEDO);
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_PROBE,DAMAGE_PROBE);
-        htmlResult+=this.getDamageInfo(TEXT_DAMAGE_CRYSTAL+"&nbsp;",DAMAGE_CRYSTAL);
+        htmlResult+=this.getDamageInfo(ICON_ENGINE,TEXT_DAMAGE_ENGINE,DAMAGE_ENGINE);
+        htmlResult+=this.getDamageInfo(ICON_RADAR_LONG,TEXT_DAMAGE_LONG_RADAR,DAMAGE_LONG_RADAR);
+        htmlResult+=this.getDamageInfo(ICON_RADAR_SHORT,TEXT_DAMAGE_SHORT_RADAR,DAMAGE_SHORT_RADAR);
+        htmlResult+=this.getDamageInfo(ICON_PHASER,TEXT_DAMAGE_PHASER,DAMAGE_PHASER);
+        htmlResult+=this.getDamageInfo(ICON_TORPEDO,TEXT_DAMAGE_TORPEDO,DAMAGE_TORPEDO);
+        htmlResult+=this.getDamageInfo(ICON_PROBE,TEXT_DAMAGE_PROBE,DAMAGE_PROBE);
+        htmlResult+=this.getDamageInfo(ICON_CRYSTAL,TEXT_DAMAGE_CRYSTAL+"&nbsp;",DAMAGE_CRYSTAL);
         htmlResult+="</table>";
         return htmlResult;
     }
