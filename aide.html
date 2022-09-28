@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StariumJS</title>
+    <!-- Bootstrap styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awsome -->
+    <script src="https://kit.fontawesome.com/f9ad527616.js" crossorigin="anonymous"></script>
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u="https://analytics.theconjugator.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+  </script>
+  <!-- End Matomo Code -->       
+    <style>
+      .navbar-brand {color: white;}
+    </style>
+</head>
+
+<body>
+
+    <!-- generic header -->
+    <header class="site-header py-1">
+      <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+          <h2 class="text-white px-4"><a class="navbar-brand" href="index.html"><i class="fa-2x fa-duotone fa-stars"></i></a>StariumJS</h2>
+          <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-white"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active text-white" aria-current="page" href="index.html">Accueil</a>
+              <a class="nav-link text-white" href="game.html">Jouer</a>
+              <a class="nav-link text-white" href="aide.html">Aide</a>
+            </div>
+          </div>
+        </div>
+      </nav>      
+    </header>
+
+    <!-- Main page-->
+
+    <main>
+        <h1 class="text-center bg-primary bg-gradient text-white">Aide en ligne de Starium</h1>
+        <div class="container-fluid">
+        <nav id="navbar-aide" class="navbar navbar-light bg-light px-3 sticky-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading1">But du jeu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading2">Ecran principal</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading3">Tableau</a>
+              </li>              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Liste des commandes</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div data-bs-spy="scroll" data-bs-target="#navbar-aide" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+            <h4 id="scrollspyHeading1">But du jeu</h4>
+            <p>Le but du jeu est de neutraliser tous les Kipicks qui sont dans le tableau. Pour cela, vous disposez de votre vaisseau appelé l'Endurci.</p>
+            <h4 id="scrollspyHeading2">Ecran principal</h4>
+            <p>Quatre grande zones composent votre écran :</p>
+            <ul>
+                <li>A gauche, les informations sur le jeu, l'état de votre vaisseau, ses dommages et la ligne de commande.</li>
+                <li>En haut, le tableau représente la carte l'espace connu dans cette zone. Par défaut, rien n'apparaît puisque c'est la zone qu'il vous reste à découvrir.</li>
+                <li>En dessous, les messages du jeu qui contiennent le résumé des dernières actions et leurs résultats.</li>
+                <li>En bas, le secteur qui affiche le détail de ce qui vous entoure. Il s'agit de votre environnement proche.</li>
+            </ul>
+            <h4 id="scrollspyHeading3">Le tableau</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading4">Le secteur</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading5">L'écran de contrôle</h4>
+            <p>...</p>
+            <h4 id="scrollspyHeading5">Liste des commandes</h4>
+            <p>...</p>          
+        </div>
+
+        </div>
+    </main>
+
+  
+    <!-- footer generic-->
+    <footer class="site-footer py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md">
+            <h2><i class="fa-2x fa-duotone fa-stars"></i> StariumJS</h2>
+            <small class="d-block mb-3 text-muted">&copy; 2022</small>
+          </div>   
+          <div class="col-6 col-md">
+            <h5>Fonctionnalité</h5>
+            <ul class="list-unstyled text-small">
+              <li><i class="fa-solid fa-house"></i>&nbsp;<a class="link-secondary" href="/index.html">Accueil</a></li>
+              <li><i class="fa-solid fa-circle-play"></i>&nbsp;<a class="link-secondary" href="/game.html">Jouer</a></li>
+              <li><i class="fa-solid fa-circle-info"></i>&nbsp;<a class="link-secondary" href="aide.html">Aide</a></li>
+            </ul>
+          </div>                 
+          <div class="col-6 col-md">
+            <h5>Contact <i class="fa-regular fa-envelope"></i></h5>
+            <p><a href="https://leconjugueur.lefigaro.fr/blog/contact/">Pour me contacter,</a> laissez-moi un message sur le Blog de Le Conjugueur en mentionnant qu'il s'agit de Starium.</p>
+          </div>
+          <div class="col-6 col-md">
+            <h5>À propos</h5>
+            <ul class="list-unstyled text-small">
+              <li><i class="fa-brands fa-github"></i>&nbsp;<a class="link-secondary" href="https://github.com/brewalan/StariumJS">Source</a></li>
+              <li><i class="fa-regular fa-cookie"></i>&nbsp;<a class="link-secondary" href="privacy.html">Confidentialité</a></li>
+              <li><i class="fa-solid fa-gavel"></i>&nbsp;<a class="link-secondary" data-bs-toggle="modal" href="#modalMention">Mentions légales</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>        
+
+    <!-- Mentions légales -->
+    <div class="modal fade" id="modalMention" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="modalStartLabel">Mentions Légales</h5>
+                  <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                  <p><i class="fa-duotone fa-gavel fa-2x"></i></p>
+                  <p>StariumJS est proposé par la société Le Conjugueur SRL enregistrée à la Banque Carrefour des Entreprises en Belgique sous le numéro de TVA BE0687930631.</p>
+                  <p>Hébergeur : Amazon AWS Paris, 31 pl des Corolles 92400 Courbevoie, France</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+
+</body>
+
+</html>
