@@ -4,326 +4,158 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Starium</title>
+    <title>StariumJS</title>
     <!-- Bootstrap styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/f9ad527616.js" crossorigin="anonymous"></script>
-    <!-- Starium scripts -->
-    <script async src="settings.js"></script>
-    <script async src="stariumObject.js"></script>
-    <script async src="tableau.js"></script>
-    <script async src="starium.js"></script>
     <!-- Matomo -->
     <script>
-        var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['disableCookies']);
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-        var u="https://analytics.theconjugator.com/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
-        _paq.push(['setSiteId', '4']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <!-- End Matomo Code -->
-    <!-- Game custom style -->
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u="https://analytics.theconjugator.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '4']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+  </script>
+  <!-- End Matomo Code -->       
     <style>
-        #tableau,#sector,#info,#damage  {
-            line-height: 95%;
-        }
+      .navbar-brand {color: white;}
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="p-5 bg-primary text-white text-center">
-            <h1>Starium game</h1>
-            <p>Resize this responsive page to see the effect!</p> 
-        </div>
-        
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active btn" data-bs-toggle="modal" data-bs-target="#modalStart">Nouvelle partie</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:refreshGame()">Refresh</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:generateDamage()">Damage</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:generateCollision()">Choc</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalEndLose">Perdu</a>
-                    </li>
-        
-                </ul>
+
+    <header class="site-header py-1">
+      <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+          <h2 class="text-white px-4"><a class="navbar-brand" href="index.html"><i class="fa-2x fa-duotone fa-stars"></i></a>StariumJS</h2>
+          <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-white"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active text-white" aria-current="page" href="index.html">Accueil</a>
+              <a class="nav-link text-white" href="game.html">Jouer</a>
+              <a class="nav-link text-white" href="aide.html">Aide</a>
             </div>
-        </nav>
+          </div>
+        </div>
+      </nav>      
     </header>
+      
+      <main>
+        <div class="p-3 p-md-5 m-md-3 text-center bg-light">
+          <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 fw-normal"><i class="fa-duotone fa-alien-8bit"></i><br />StariumJS</h1>
+            <p class="lead fw-normal">Un jeu rétro en mode texte dans l'espace inspiré de Trek 73.</p>
+            <a class="btn btn-outline-secondary" href="game.html">C'est parti !</a>
+          </div>
+        </div>
+      
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 py-3">
+              <h2 class="display-5">Starium, le jeu</h2>
+              <p class="lead">Starium est la version moderne d'un jeu datant des années 1970 lorsque les ordinateurs tenaient dans des pièces entières.</p>
+              <p></p>La toute première version du jeu a été écrite par Mike Mayfield en Basic. Il s'agissait d'un amusement entre programmeur mais le succès a été tel qu'il a été installé sur pratiquement tous les ordinateurs de l'époque.</p>
+              <p><i class="fa-duotone fa-face-party fa-3x"></i></p>
+            </div>
+          </div>
+          <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+              <h2 class="display-5"><i class="fa-duotone fa-computer"></i><br />But du jeu</h2>
+              <p class="lead">Vous êtes le capitaine d'un vaisseau et vous devez pacifier la zone.</p>
+              <p>Protégez votre vaisseau, noté E comme Endurci sur l'écran.<br />
+              Vous devez neutraliser vos ennemis, les Kipicks notés K.<br />
+              Pour cela, vous disposez de lasers, de torpilles et de bases de ravitaillement.</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div class="bg-white me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+              <h2 class="display-5"><i class="fa-duotone fa-keyboard"></i><br />Un jeu au clavier</h2>
+              <p class="lead">Le jeu se joue au <b>clavier</b>. Des boutons raccourcis ont été mis à l'écran pour voir les commandes disponibles, mais il est nettement plus facile d'utiliser le clavier.</p>
+              
+            </div>
 
-    <!-- main screen -->
-    <section class="section">
 
+
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">Note</h4>
+              <p>La meilleure expérience se fait sur ordinateur.<br />Le jeu n'a pas été conçu pour les téléphones et les tablettes.</p>
+              <hr>
+              <p>Bon amusement !</p>
+              <p><i class="fa-duotone fa-party-horn fa-3x"></i></p>
+            </div>
+          </div>
+        </div>
+
+
+    </main>
+
+  
+
+    <footer class="site-footer py-5 bg-light">
+      <div class="container">
         <div class="row">
-            <!-- left section part -->
-            <div class="col-3">
-                <h2>Endurci</h2>
-                <h5>Information</h5>
-                <div id="info">&nbsp;</div>
-
-                <h5>Dégâts</h5>
-                <div id="damage">&nbsp;</div>
-
-                <h5>Commandes</h5>              
-                <div class="d-grid gap-1">
-
-                    <div class="input-group input-group-sm mb-6">
-                        <span class="input-group-text" id="inputGroupCmd">cmd</span>
-                        <input type="text" class="form-control text-end" aria-label="Local command" aria-describedby="inputGroup-sizing-sm" id="cmdText">
-                      </div>
-
-                    <button id="btnCmd1" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveTableau">Mouvement tableau</button>
-                    <button id="btnCmd2" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveSector">Mouvement secteur</button>
-                    <button id="btnCmd3" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPhaser">Laser</button>
-                    <button id="btnCmd4" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalTorpedo">Torpille</button>
-                    <button id="btnCmd5" class="btn btn-info btn-sm" onclick="javascript:cmdRadar()">Radar</button>
-                    <button id="btnCmd6" class="btn btn-info btn-sm" onclick="javascript:cmdProbe()">Sonde</button>
-                    <button id="btnCmd7" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalShield">Bouclier</button>
-                    <button id="btnCmd8" class="btn btn-warning btn-sm" onclick="javascript:cmdPass()">Passer son tour</button>
-                </div>
-
-            </div>
-            <!-- main screen -->
-            <div class="col-9">
-                <h2>Tableau</h2>
-                <h5>Voici ce qui est présent à proximité</h5>
-                <div id="tableau" class="font-monospace">&nbsp;</div>
-                <h5>Derniers messages</h5>
-                <div id="message">&nbsp;</div>
-
-
-                <!-- second line -->
-                <div class="row">
-                    <div class="col-4">
-                        <h2>Secteur&nbsp;local</h2>
-                        <div id="sector" class="font-monospace">&nbsp;</div>
-                    </div>
-                    <div class="col-6">
-                        <div id="probe">&nbsp;</div>
-                    </div>
-                </div>
-
-
-            </div>
-
-
+          <div class="col-12 col-md">
+            <h2><i class="fa-2x fa-duotone fa-stars"></i> StariumJS</h2>
+            <small class="d-block mb-3 text-muted">&copy; 2022</small>
+          </div>   
+          <div class="col-6 col-md">
+            <h5>Fonctionnalité</h5>
+            <ul class="list-unstyled text-small">
+              <li><i class="fa-solid fa-house"></i>&nbsp;<a class="link-secondary" href="/index.html">Accueil</a></li>
+              <li><i class="fa-solid fa-circle-play"></i>&nbsp;<a class="link-secondary" href="/game.html">Jouer</a></li>
+              <li><i class="fa-solid fa-circle-info"></i>&nbsp;<a class="link-secondary" href="aide.html">Aide</a></li>
+            </ul>
+          </div>                 
+          <div class="col-6 col-md">
+            <h5>Contact <i class="fa-regular fa-envelope"></i></h5>
+            <p><a href="https://leconjugueur.lefigaro.fr/blog/contact/">Pour me contacter,</a> laissez-moi un message sur le Blog de Le Conjugueur en mentionnant qu'il s'agit de Starium.</p>
+          </div>
+          <div class="col-6 col-md">
+            <h5>À propos</h5>
+            <ul class="list-unstyled text-small">
+              <li><i class="fa-brands fa-github"></i>&nbsp;<a class="link-secondary" href="https://github.com/brewalan/StariumJS">Source</a></li>
+              <li><i class="fa-regular fa-cookie"></i>&nbsp;<a class="link-secondary" href="privacy.html">Confidentialité</a></li>
+              <li><i class="fa-solid fa-gavel"></i>&nbsp;<a class="link-secondary" data-bs-toggle="modal" href="#modalMention">Mentions légales</a></li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
+    </footer>        
 
-
-    <footer>
-        <div class="mt-5 p-4 bg-dark text-white text-center">
-            <p>Footer</p>
-        </div>
-    </footer>
-
-
-
-
-    <!-- Modal Shield -->
-    <div class="modal fade" id="modalShield" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalShieldLabel">Taux du bouclier</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Indiquez le nouveau taux de bouclier entre 1 et 99%</p>
-                    <p class="text-center">
-                        <input class="form-control-sm text-end" type="input" id="inputShieldRate"> %
-                    </p>
-                    <p class="fst-italic">Attention, un taux de bouclier trop élevé peut avoir un impact sur votre énergie disponible pour les autres fonctions.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdShield()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal Move Sector -->
-    <div class="modal fade" id="modalMoveSector" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalMoveSectorLabel">Mouvement Secteur</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p>Distance du déplacement (1 à 12)</p>
-                    <p>
-                        <input class="form-control-sm text-end" type="input" id="inputDistanceSector">
-                    </p>
-                    <p>Direction en degré (0 à 360)</p>
-                    <p>
-                        <input class="form-control-sm text-end" type="input" id="inputDirectionSector">
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdMoveSector()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Move Sector -->
-    <div class="modal fade" id="modalMoveTableau" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalMoveTableauLabel">Mouvement Tableau</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p>Distance du déplacement (1 à 12)</p>
-                    <p>
-                        <input class="form-control-sm text-end" type="input" id="inputDistanceTableau">
-                    </p>
-                    <p>Direction en degré (0 à 360)</p>
-                    <p>
-                        <input class="form-control-sm text-end" type="input" id="inputDirectionTableau">
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdMoveTableau()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Phaser -->
-    <div class="modal fade" id="modalPhaser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalPhaserLabel">Laser</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Indiquez la puissance du Laser</p>
-                    <p class="text-center">
-                        <input class="form-control-sm text-end" type="input" id="inputPhaser">
-                    </p>
-                    <p class="fst-italic">Attention, le laser utilise l'énergie de vos batteries, assurez-vous de gardez suffisamment d'énergie pour ne pas être en difficulté pour la suite.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdPhaser()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Modal Torpedo -->
-    <div class="modal fade" id="modalTorpedo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalTorpedoLabel">Torpille</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Indiquez la direction de la torpille en degré (0 à 360)</p>
-                    <p class="text-center">
-                        <input class="form-control-sm text-end focusedInput" type="input" id="inputTorpedo">
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdTorpedo()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Start Game -->
-    <div class="modal fade" id="modalStart" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalStartLabel">Démarrage du jeu</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Indiquez le nombre de Kipicks (1 à 200)</p>
-                    <p class="text-center">
-                        <input class="form-control-sm text-end focusedInput" type="input" id="inputStartKipick">
-                    </p>
-                    <p>Indiquez le nombre de Bases (1 à 20)</p>
-                    <p class="text-center">
-                        <input class="form-control-sm text-end" type="input" id="inputStartBase">
-                    </p>                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdStartGame()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Victory -->
-    <div class="modal fade" id="modalEndWin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalStartLabel">Victoire</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h1><i class="fa-duotone fa-trophy-star"></i></h1>
-                    <p>Bravo ! Vous avez gagné.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lose -->
-    <div class="modal fade" id="modalEndLose" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalStartLabel">Perdu</h5>
-                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h1><i class="fa-duotone fa-bomb"></i></h1>
-                    <p>Votre vaisseau a été détruit. Vous avez perdu !</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Mentions légales -->
+    <div class="modal fade" id="modalMention" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="modalStartLabel">Mentions Légales</h5>
+                  <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                  <p><i class="fa-duotone fa-gavel fa-2x"></i></p>
+                  <p>StariumJS est proposé par la société Le Conjugueur SRL enregistrée à la Banque Carrefour des Entreprises en Belgique sous le numéro de TVA BE0687930631.</p>
+                  <p>Hébergeur : Amazon AWS Paris, 31 pl des Corolles 92400 Courbevoie, France</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
 
 
 </body>

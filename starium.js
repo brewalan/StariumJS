@@ -570,6 +570,7 @@ function startGame() {
     message = [];
     addMessage(TEXT_WELCOME);
     refreshGame();
+    resetCmd();
 }
 
 /* refresh element */
@@ -647,6 +648,7 @@ function manageTextCmd(cmd) {
                 break;
             default:
                 addMessage(cmd + " " + TEXT_COMMAND_NOT_FOUND);
+                displayCommand();
                 resetCmd();
         }    
     /* second level of command line */
@@ -705,7 +707,7 @@ function manageTextCmd(cmd) {
 /* reset cmd level */
 function resetCmd() {
     const cmdInputText = document.getElementById("inputGroupCmd");   
-    cmdInputText.innerText="msg";
+    cmdInputText.innerHTML="<i class='fa-regular fa-terminal'></i>&nbsp;msg";
     cmdLevel=0;
 }
 
