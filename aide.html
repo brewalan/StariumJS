@@ -72,10 +72,12 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Liste des commandes</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-                  <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyCmd1">1: mouvement</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyCmd2">2: régénération</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyCmd3">3: radar</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyCmd4">4: laser</a></li>
+                  <li><a class="dropdown-item" href="#scrollspyCmd5">5: torpille</a></li>
                 </ul>
               </li>
             </ul>
@@ -98,7 +100,32 @@
             <h4 id="scrollspyHeading5">L'écran de contrôle</h4>
             <p>...</p>
             <h4 id="scrollspyHeading5">Liste des commandes</h4>
-            <p>...</p>          
+            <h5 id="scrollspyCmd1">Commande 1 : mouvement du vaisseau</h5>
+            <p>La commande 1 ou les boutons "Mouvement tableau" et "mouvement secteur" permettent de faire bouger le vaisseau. Deux choix vont alors s'offrir à vous :</p>
+            <ul>
+              <li>soit vous voulez voyager dans le secteur, de proche en proche en quelque sorte</li>
+              <li>soit vous voulez faire un plus long parcours et voyager de secteur en secteur ce qui est nettement plus rapide car vous pouvez utiliser de moteurs capables de parcourir plusieurs secteurs d'un coup.</li>
+            </ul>
+            <p>Tout dépend de la distance que vous souhaitez parcourir. Il faut cependant noter que le voyage de secteur en secteur peut être endommagé par un tir ennemi. Vous devrez alors voyager de proche en proche dans le secteur.</p>
+            <p>Une fois la décision prise, le vaisseau vous demande le nombre de cases dont vous voulez voyager. Il peut très bien s'agir du nombre de cases sur le tableau ou dans le secteur. Si vous dépassez les bords d'un secteur, vous changerez de secteur. Lors d'un voyage à longue distance, le vaisseau va d'abord prendre de la vitesse. Assurez-vous que la voie est libre pour éviter d'entrer en collision avec une étoile ou un ennemi. S'il y a une collision, l'ordinateur annulera le voyage. Vous risquez de recevoir un dégât.</p>
+            <p>Ensuite, l'ordinateur vous demande quel cap prendre. L'univers étant plat, vous n'avez pas besoin de vous demander où il vous faut aller dans le plan de la largeur. La direction qu'il demande est celle de la direction en degré qu'indique une simple boussole. Voici ci-dessous les degrés à utiliser en fonction des directions.</p> 
+            <p class="text-center"><img src="images/boussole.png" style="max-width: 100%;"></p>
+            <p>Chaque case parcourue dure 1 mois galactique. PS: Il y a 10 mois galactiques dans une année galactique.</p>
+            <!-- //////////// -->
+            <h5 id="scrollspyCmd2">Commande 2 : régénération</h5>
+            <p>La commande 2 vous permet de vous immobiliser totalement dans le but de recharger vos batteries. La recharge permet de récupérer environ de l'ordre de 4% d'énergie par mois. Plus vous resterez longtemps, plus votre niveau d'énergie augmente. Il ne peut cependant pas dépasser la limite imposée par votre vaisseau. Il vous faut également veiller au temps qui risque de passer nettement plus vite.</p>
+            <p>Durant ce temps, vous pouvez également réparer des dégâts qui ont eu lieu. Dans ce cas, vous aurez un message vous signalant une réparation.</p>
+            <p>A noter que ceci profite également à vos ennemis qui ont aussi le temps de se régénérer et de réparer leurs dégâts. Lorsque des ennemis sont présents dans le secteur, cette commande n'est pas disponible.</p>
+            <!-- //////////// -->
+            <h5 id="scrollspyCmd3">Commande 3 : radar longue portée</h5>
+            <p>Le radar (commande 3) vous permet de scanner tout ce qu'il y a autour de votre vaisseau spatial. Sa portée étant limitée, il ne peut scanner que dans un rayon de un secteur à la ronde dans le tableau. Si vous êtes sur un bord du tableau, le scan se fait de l'autre côté. Le radar peut être endommagé. Une analyse radar coûte en général 20 unités d'énergie.</p>
+            <!-- //////////// -->
+            <h5 id="scrollspyCmd4">Commande 4 : laser</h5>
+            <p>Le laser (commande 4) est une des armes les plus puissantes sur le marché. Vous indiquez le niveau d'énergie que vous voulez qu'il envoie. Chaque Kipick recevra un coup de ce laser haute performance. Il vous faudra malheureusement ménager vos batteries, car elles mettent plus de temps à se recharger que le laser n'en met à les décharger. Chaque coup que reçoit votre ennemi est proportionnel à sa distance par rapport à vous. Le laser peut être endommagé.</p>  
+            <!-- //////////// -->
+            <h5 id="scrollspyCmd5">Commande 5 : torpille</h5>
+            <p>Les Torpilles (commande 5) sont très efficaces contre les Kipicks qui ont encore beaucoup d'énergie en réserve. Leur nombre étant limité, vous devez en faire bon usage et surtout ne pas vous tromper dans la direction en degré pour l'envoyer. Les torpilles n'ont pas de tête chercheuse, car les Kipicks ont inventé un système de brouillage semblable au vôtre. C'est ce qui explique qu'il faut entrer l'angle en degré. Votre principale difficulté sera de bien viser votre ennemi, mais vous devriez y parvenir facilement ! Les Torpilles peuvent être endommagées. Pour rappel, voici les différents angles de visée :</p>
+            <p class="text-center"><img src="images/boussole.png" style="max-width: 100%;"></p>      
         </div>
 
         </div>
@@ -151,7 +178,7 @@
                   <p>Hébergeur : Amazon AWS Paris, 31 pl des Corolles 92400 Courbevoie, France</p>
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="javascript:cmdCloseGame()">OK</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
               </div>
           </div>
       </div>

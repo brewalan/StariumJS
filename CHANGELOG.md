@@ -27,5 +27,11 @@ Initial version with the first developments
 Add modal to start game
 Add repair when objects is damaged
 
+## [0.3.0] - 2022-09-28
+
+Add website
+Add help
+Bug fix
+
 ### Changed
   
