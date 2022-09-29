@@ -67,8 +67,11 @@
                 <a class="nav-link" href="#scrollspyHeading2">Ecran principal</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading3">Tableau</a>
-              </li>              
+                <a class="nav-link" href="#scrollspyHeading3">Le tableau</a>           
+              </li>     
+              <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading4">Secteur</a>
+              </li>                           
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Liste des commandes</a>
                 <ul class="dropdown-menu">
@@ -97,8 +100,22 @@
                 <li>En dessous, les messages du jeu qui contiennent le résumé des dernières actions et leurs résultats.</li>
                 <li>En bas, le secteur qui affiche le détail de ce qui vous entoure. Il s'agit de votre environnement proche.</li>
             </ul>
+            <!-- /////////////// -->            
             <h4 id="scrollspyHeading3">Le tableau</h4>
-            <p>...</p>
+            <p class="text-center"><img alt="Tableau" src="images/tableau.png" style="max-width: 100%;"></p>
+            <p>La partie haute de l'écran est appelée le tableau. Il contient des données sur toute la partie de la galaxie dans laquelle vous vous trouvez. Par défaut, vous ne voyez rien car vous êtes en plein territoire Kipick, là où personne n'a encore été. Vous voyagez en territoire inconnu, c'est pourquoi il vous faut de temps en temps scanner au radar l'endroit où vous êtes pour pouvoir détecter d'éventuels ennemis. Tous les secteurs qui apparaissent en gris sont des zones non encore explorées.</p>
+            <p>Lorsqu'un secteur a déjà été exploré, le tableau donne ses informations sous forme d'un nombre de 3 chiffres :</p>
+            <pre>
+                  ex:   812        8--> signifie qu'il y a là 8 Kipicks
+                                   1--> --------------------- 1 Base
+                                   2--> --------------------- 2 Etoiles
+            </pre>   
+            <p>Il peut également y avoir un + dans les chiffres du tableau : 10+ signifie qu'il y a là un Kipick et plus de 9 étoiles.</p>
+            <p>Le tableau est automatiquement remis à jour si jamais vous détruisez quelque chose dans le secteur. Il peut malheureusement arriver qu'à la suite d'un choc très violent, votre tableau soit totalement anéanti. L'ordinateur se charge alors d'en refaire un le plus vite possible.</p>
+            <p>Lorsque vous arrivez sur un secteur que vous n'avez pas encore découvert, le tableau est automatiquement mis à jour en ajoutant ce nouveau secteur à la base de données de l'ordinateur.</p>
+            <p>Dans le tableau, le secteur dans lequel se trouve l'Endurci est mis en gras.</p>
+            <p class="text-center"><img alt="Secteur" src="images/tableau2.png" style="max-width: 100%;"></p>     
+            <!-- /////////////// -->
             <h4 id="scrollspyHeading4">Le secteur</h4>
             <p>...</p>
             <h4 id="scrollspyHeading5">L'écran de contrôle</h4>

@@ -37,13 +37,13 @@
             line-height: 95%;
         }
         .navbar-brand {color: white;}   
-        @media only screen and (max-width: 640px) {
+        @media (max-width: 640px) {
             #tableau,#sector {  font-size: 0.6em;  }
             #info,#damage,#message,p.probeMsg,table.probeMsg {  font-size: 0.8em;  }
             h2.titre {  font-size: 1.0em;  }   
             h5.titre {  font-size: 0.9em;  }  
         }               
-        @media only screen and (min-width: 641px) and (max-width: 900px) {
+        @media (min-width: 641px) and (max-width: 900px) {
             #tableau,#sector {  font-size: 0.8em;  }
             #info,#damage,#message,p.probeMsg,table.probeMsg {  font-size: 0.9em;  }
             h2.titre {  font-size: 1.1em;  }   
@@ -78,13 +78,13 @@
 
         <div class="row">
             <!-- left section part -->
-            <div class="col-3">
+            <div class="col-3 col-xs-auto col-sm-4 col-md-3">
                 <h2 class="titre">Endurci</h2>
                 <h5 class="titre">Information</h5>
-                <div id="info">&nbsp;</div>
+                <div id="info" class="table-responsive pb-2">&nbsp;</div>
 
                 <h5 class="titre">Dégâts</h5>
-                <div id="damage">&nbsp;</div>
+                <div id="damage" class="table-responsive pb-2">&nbsp;</div>
 
                 <h5 class="titre">Commandes</h5>              
                 <div class="d-grid gap-1">
@@ -107,7 +107,7 @@
 
             </div>
             <!-- main screen -->
-            <div class="col-9">
+            <div class="col-9 col-xs-auto col-sm-8 col-md-9">
                 <h2 class="titre">Tableau</h2>
                 <h5 class="titre">Voici ce qui est présent à proximité</h5>
                 <div id="tableau" class="font-monospace">
