@@ -28,6 +28,7 @@
   <!-- End Matomo Code -->       
     <style>
       .navbar-brand {color: white;}
+      h4 { padding-top: 100px; padding-bottom: 10px; }
     </style>
 </head>
 
@@ -58,7 +59,6 @@
         <h1 class="text-center bg-primary bg-gradient text-white">Aide en ligne de Starium</h1>
         <div class="container-fluid">
         <nav id="navbar-aide" class="navbar navbar-light bg-light px-3 sticky-top">
-            <a class="navbar-brand" href="#">Navbar</a>
             <ul class="nav nav-pills">
               <li class="nav-item">
                 <a class="nav-link" href="#scrollspyHeading1">But du jeu</a>
@@ -104,11 +104,11 @@
             <h4 id="scrollspyHeading3">Le tableau</h4>
             <p class="text-center"><img alt="Tableau" src="images/tableau.png" style="max-width: 100%;"></p>
             <p>La partie haute de l'écran est appelée le tableau. Il contient des données sur toute la partie de la galaxie dans laquelle vous vous trouvez. Par défaut, vous ne voyez rien car vous êtes en plein territoire Kipick, là où personne n'a encore été. Vous voyagez en territoire inconnu, c'est pourquoi il vous faut de temps en temps scanner au radar l'endroit où vous êtes pour pouvoir détecter d'éventuels ennemis. Tous les secteurs qui apparaissent en gris sont des zones non encore explorées.</p>
-            <p>Lorsqu'un secteur a déjà été exploré, le tableau donne ses informations sous forme d'un nombre de 3 chiffres :</p>
+            <p>Lorsqu'un secteur a déjà été exploré, le tableau donne ses informations sous forme d'un nombre de 3 chiffres&nbsp;:</p>
             <pre>
-                  ex:   812        8--> signifie qu'il y a là 8 Kipicks
-                                   1--> --------------------- 1 Base
-                                   2--> --------------------- 2 Etoiles
+            ex: 812   8--> il y a là 8 Kipicks
+                      1--> --------- 1 Base
+                      2--> --------- 2 Etoiles
             </pre>   
             <p>Il peut également y avoir un + dans les chiffres du tableau : 10+ signifie qu'il y a là un Kipick et plus de 9 étoiles.</p>
             <p>Le tableau est automatiquement remis à jour si jamais vous détruisez quelque chose dans le secteur. Il peut malheureusement arriver qu'à la suite d'un choc très violent, votre tableau soit totalement anéanti. L'ordinateur se charge alors d'en refaire un le plus vite possible.</p>
@@ -117,9 +117,103 @@
             <p class="text-center"><img alt="Secteur" src="images/tableau2.png" style="max-width: 100%;"></p>     
             <!-- /////////////// -->
             <h4 id="scrollspyHeading4">Le secteur</h4>
-            <p>...</p>
+            <p class="text-center"><img alt="Secteur" src="images/secteur.png" style="max-width: 100%;"></p>
+            <p>En bas à droite, l'écran blanc est le récapitulatif de ce que vous détectez dans la région la plus proche de vous. L'appareil responsable de cette détection est un radar de courte portée très fragile. Il faudra en prendre soin car ils sont les yeux de votre vaisseau. Chaque secteur s'étend de 10 cases sur 10 cases.</p>
+            <p class="text-center"><img alt="Secteur" src="images/secteur2.png" style="max-width: 100%;"></p>
+            <p>Il peut arriver par malheur que cet écran devienne noir à la suite d'un choc important ou si l'énergie est insuffisante pour faire fonctionner correctement les radars de courte distance. Voici alors comment apparaît votre écran. Vous ne voyez que ce qui se situe à seulement une case de votre vaisseau. De cette manière, il est très difficile de voir où se trouvent les ennemis. Il faut faire attention quand les Kipicks jouent car on peut parfois les repérer grâce à la lumière de leur laser.</p> 
+            <p>Sur ce radar, apparaît tout ce que l'on peut trouver à proximité immédiate du vaisseau. Chaque objet est représenté par une lettre. Voici les différents objets que vous pouvez trouver&nbsp;:</p>
+              <blockquote>
+              '*' est une <a href="#etoile">étoile</a><br>
+              'B' est une <a href="#base">base</a> de ravitaillement<br>
+              'K' est un ennemi. C'est un <a href="#kipick">Kipick</a><br>
+              'E' est votre vaisseau : l'<a href="#endurci">Endurci</a><br>
+              '#' est une <a href="#torpille">torpille</a>
+              </blockquote>
+              
+              <h5>Détail d'un secteur</h5>
+              <table>
+              <tr>
+              <td valign = "top"><a name="etoile"></a>*&nbsp;</td>
+              <td>Les étoiles '*' n'ont aucun rôle précis. Elles sont là comme les arbres sont dans la forêt. Vous pouvez les détruire si vous voulez mais songez avant qu'elles sont peut-être habitées... Vous pouvez sans risque vous déplacer vers l'une d'entres elles mais l'ordinateur de bord vous empêchera automatiquement de vous approcher de trop près. Attention toutefois, vous risquez de subir un choc si vous vous approchez de trop près d'une étoile.</td>
+              </tr><tr>
+              <td valign = "top"><a name="base"></a>B&nbsp;</td>
+              <td>Les Bases 'B' vous fournissent le ravitaillement nécessaire à votre survie. Elles vous redonnent le maximum d'énergie que vous pouvez recevoir. Vous recevez également un plein de torpilles et tous vos dégâts sont réparés instantanément. En effet, les ingénieurs des bases intersidérales sont réputés pour la qualité de leur travail. Vous ne savez pas où elles se trouvent dès le début de la partie car l'état major avait tellement peur de les voir tomber aux mains des Kipicks qu'il les a cachées. Personne, même sur Terre, ne sait exactement où elles se trouvent. Une Base ne peut servir qu'une seule fois.</td>
+              </tr><tr>
+              <td valign = "top"><a name="kipick"></a>K&nbsp;</td>
+              <td>Les Kipicks 'K' sont vos ennemis. Il vous faut tous les détruire si vous voulez remporter votre mission. Cependant, bien que moins modernes, leurs vaisseaux ont l'avantage du nombre. De plus, leurs caractéristiques techniques semblent suffisantes pour vous inquiéter un moment. Nous ne connaissons pas exactement leurs caractéristiques.</td>
+              </tr><tr>
+              <td valign = "top"><a name="endurci"></a>E&nbsp;</td>
+              <td>Le 'E' représente votre vaisseau spatial. Il s'agit du vaisseau le plus moderne de toute l'alliance terrienne. Vous ne devez en aucun cas permettre qu'on puisse le détruire. Il est muni des derniers accumulateurs qui vous permettront d'accroître votre énergie en restant immobile ou en bougeant un peu.</td>
+              </tr><tr>
+              <td valign = "top"><a name="torpille"></a>#&nbsp;</td>
+              <td>Le '#' est une torpille en cours de mouvement. Lorsque vous tirez une torpille, l'ordinateur vous montre sa trajectoire sur ce même écran de contrôle. La torpille continue sa progression jusqu'à ce qu'elle rencontre un objet ou qu'elle sorte du secteur.</td>
+              </tr></table>
+            <!-- /////////////// -->
             <h4 id="scrollspyHeading5">L'écran de contrôle</h4>
-            <p>...</p>
+            <p class="text-center"><img alt="Secteur" src="images/controle.png" style="max-width: 100%;"></p>
+            <p>En haut à gauche, se trouvent les données du tableau de bord de votre vaisseau. C'est à cet endroit que vous pouvez vous rendre compte de son état de santé.</p>
+            <p><i>Année galactique</i> : vous disposez d'un temps limité pour accomplir votre mission. Ce compteur vous permet de savoir où vous en êtes. Une réforme du temps a été faite. Dans l'espace, le temps ne compte que 10 mois galactiques. Vous remarquerez que le temps s'écoule rapidement puisque nous sommes sur de longues distances.</p>
+            <p><i>Coo globales X / Y</i> : il s'agit de votre position sur le tableau. Par défaut, le tableau compte 16 x 16 secteurs.</p>
+            <p><i>Coo locales X / Y</i> : il s'agit de votre position dans un secteur en particulier. Par défaut, chaque secteur compte 10 x 10 cases.</p>
+            <p><i>Niveau d'alerte </i>: l'alerte détermine dans quel état vous vous trouvez. Voici les différents types d'alerte :<br></p>
+            
+            <blockquote>
+            <table><tr>
+            <td valign="top"><font color="green">Alerte Verte</font></td>
+            <td>Rien à signaler, tout se passe bien, votre niveau d'énergie est correct voire très correct et il n'y a pas d'ennemi à proximité immédiate.</td>
+            </tr><tr>
+            <td valign="top"><font color="orange">Alerte Jaune</font></td>
+            <td>Il n'y a pas d'ennemi dans le secteur mais par contre, il faudrait peut-être commencer par chercher une base ou rester un moment en régénération pour pouvoir recharger les batteries. Eviter cependant tout combat, vous ne pourriez pas vous en sortir vivant.</td>
+            </tr><tr>
+            <td valign="top"><font color="red">Alerte Rouge</font></td>
+            <td>Des ennemis se trouvent dans le même secteur que vous. Vous devez combattre.</td>
+            </tr><tr>
+            <td valign="top"><font color="purple">Alerte Critique</font></td>
+            <td>Vous vous trouvez en plein combat mais vous n'avez pas assez d'énergie pour pouvoir gagner. Le plus sage serait de partir pour trouver une base mais les Kipicks risquent alors de recharger leurs batteries.</td>
+            </tr></table>
+            </blockquote>
+            <p><i>Energie</i> : Votre Energie totale est séparée en 2 blocs : l'énergie du bouclier et les autres énergies. Le taux du bouclier vous donne le pourcentage de répartition de ces deux énergies. Le transfert d'énergie n'est cependant pas immédiat et il va vous falloir un certain temps si vous voulez vous constituer un puissant bouclier. Par contre, ne mettez pas trop d'énergie dans le bouclier si vous voulez vous servir de cette énergie dans les lasers ou le radar. L'idéal est de conserver un taux de 50/50 afin de pouvoir parer à toutes les éventualités. Si jamais vous n'avez plus d'énergie dans le bouclier, les autres énergies se mettent en place pour un bouclier très superficiel qui empêche le vaisseau de se détruire mais ne lui empêche pas de subir des dégâts plus ou moins importants suivant la puissance du choc. Si par un grand malheur, votre énergie arrive à 0, vous perdez la partie! Votre vaisseau a été détruit.</p>
+            <p><i>Torpilles</i> : Ce contrôle vous indique le nombre de torpilles qu'il vous reste. Lorsque vous arrivez à 0, vous ne pouvez plus utiliser cette arme.</p>
+            <p><i>Kipick restant</i> : Votre mission consiste à détruire tous les Kipicks d'un tableau. Ce contrôle vous indique combien il en reste et combien il y en avait au départ. Dès que vous arrivez à 0 kipick, vous avez gagné le jeu.</p>
+            <p><i>Base restante</i> : Ce contrôle vous indique combien de base sont encore disponibles et combien il y en avait au début du jeu.</p>
+            
+            <h5>Les dégâts</h5>
+            <p class="text-center"><img src="images/cmd10.png" style="max-width: 100%;"></p>
+
+            <p>En plus de l'état de votre vaisseau, vous voyez les différents dommages qu'il a subi. Les éléments qui peuvent être endommagés sont les suivants :</p>
+            <blockquote>
+            <table>
+            <tr>
+            <td valign="top" width = "200">moteur luminique</td>
+            <td>il s'agit de la commande 1 (bouger) pour les déplacements sur le tableau</td>
+            </tr>
+            <tr>
+            <td valign="top">radar courte porté</td>
+            <td>lorsqu'il est endommagé, vous ne voyez plus ce qui se passe dans le secteur au-delà de une case du vaisseau. Autant dire que vous êtes aveugle.</td>
+            </tr>
+            <tr>
+            <td valign="top">radar longue porté</td>
+            <td>il s'agit de la commande 3. Endommagé, vous ne pouvez plus détecter ce qu'il y a dans les secteurs à proximité.</td>
+            </tr>
+            <tr>
+            <td valign="top">laser</td>
+            <td>commande 4. Endommagé, vous ne pouvez plus utiliser le laser.</td>
+            </tr>
+            <tr>
+            <td valign="top">torpille</td>
+            <td>commande 5. Endommagé, vous ne pouvez plus utiliser les torpilles.</td>
+            </tr>
+            <tr>
+            <td valign="top">sonde</td>
+            <td>commande 8. Endommagé, vous ne pouvez plus lancer de sonde pour voir l'état énergétique des ennemis.</td>
+            </tr>
+            <tr>
+            <td valign="top">cristal de régénération</td>
+            <td>lorsque cet élément est endommagé, vous ne rechargez plus vos batteries. Autant dire que c'est critique.</td>
+            </tr>
+            </table>
+            </blockquote>
+            <!-- /////////////// -->
             <h4 id="scrollspyHeading5">Liste des commandes</h4>
             <h5 id="scrollspyCmd1">Commande 1 : mouvement du vaisseau</h5>
             <p>La commande 1 ou les boutons "Mouvement tableau" et "mouvement secteur" permettent de faire bouger le vaisseau. Deux choix vont alors s'offrir à vous :</p>
@@ -157,7 +251,7 @@
             <p>La commande 9 vous permet de changer le taux du bouclier. Ce taux ne sera pas atteint directement car on ne peut pas transférer toute une portion d'énergie en un délai aussi court. Par contre, au fil du temps, les deux énergies convergeront vers le taux que vous avez demandé. Attention de bien garder un petit peu d'énergie pour le reste du vaisseau pour pouvoir continuer la mission.</p>
             <!-- //////////// -->
             <h5 id="scrollspyCmd12">Commande 12 : passer son tour du bouclier</h5>           
-            <p>La commande 12 vous permet de passer votre tour. S'il y a des Kipick dans le secteur, c'est alors à eux de jouer.</p>
+            <p>La commande 12 vous permet de passer votre tour. S'il y a des Kipicks dans le secteur, c'est alors à eux de jouer.</p>
 
         </div>
 
