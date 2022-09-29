@@ -231,6 +231,11 @@ class Tableau {
                 if (this.discovered[x][y]) {
                     let sector = tab[x][y].toString();
                     sector = sector.padStart(3,'0')
+                    /* manage case when more than 9 Kipicks in one sector */
+                    if (tab[x][y]>999) {
+                        sector="+"+sector.substring(sector.length-2);
+                    }
+                    /* display the sector */
                     htmlResult+=sectorStart+sector+sectorEnd;
                 } else {
                     htmlResult+="<font style='background-color:lightgray;'>"+sectorStart+"&nbsp;&nbsp;&nbsp;"+sectorEnd+"</font>";
@@ -275,23 +280,6 @@ class Tableau {
             }
             /* check if focus must be done */
             tabFocus[currentObject.localX][currentObject.localY]=currentObject.focus;
-
-
-/*            if (currentObject instanceof Star) {
-                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-planet-ringed"></i>';
-            } else if (currentObject instanceof Base) {
-                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-satellite"></i>';
-            } else if (currentObject instanceof Kipick) {
-                tab[currentObject.localX][currentObject.localY]='<i class="fa-thin fa-starfighter-twin-ion-engine"></i>';
-            } else if (currentObject instanceof Endurci) {
-                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-starship"></i>';
-            } else if (currentObject instanceof Torpedo) {
-                tab[currentObject.localX][currentObject.localY]='<i class="fa-duotone fa-rocket-launch"></i>';
-            }
-
-            /* check if focus must be done */
-            //tabFocus[currentObject.localX][currentObject.localY]=currentObject.focus;
-
         }
 
         /* display the result */
