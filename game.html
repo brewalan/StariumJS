@@ -66,7 +66,7 @@
 
         <div class="row">
             <!-- left section part -->
-            <div class="col-3">
+            <div class="col-4">
                 <h2>Endurci</h2>
                 <h5>Information</h5>
                 <div id="info">&nbsp;</div>
@@ -77,24 +77,25 @@
                 <h5>Commandes</h5>              
                 <div class="d-grid gap-1">
 
-                    <div class="input-group input-group-sm mb-6">
+                    <div class="input-group input-group-sm mb-6 px-2">
                         <span class="input-group-text" id="inputGroupCmd">cmd</span>
                         <input type="text" class="form-control text-end" aria-label="Local command" aria-describedby="inputGroup-sizing-sm" id="cmdText">
                       </div>
-
-                    <button id="btnCmd1" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveTableau">Mouvement tableau&nbsp;<i class="fa-regular fa-globe"></i></button>
-                    <button id="btnCmd2" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveSector">Mouvement secteur&nbsp;<i class="fa-regular fa-location-dot"></i></button>
-                    <button id="btnCmd3" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPhaser">Laser&nbsp;<i class="fa-regular fa-raygun"></i></button>
-                    <button id="btnCmd4" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalTorpedo">Torpille&nbsp;<i class="fa-regular fa-rocket-launch"></i></button>
-                    <button id="btnCmd5" class="btn btn-info btn-sm" onclick="javascript:cmdRadar()">Radar&nbsp;<i class="fa-regular fa-satellite-dish"></i></button>
-                    <button id="btnCmd6" class="btn btn-info btn-sm" onclick="javascript:cmdProbe()">Sonde&nbsp;<i class="fa-regular fa-drone-front"></i></button>
-                    <button id="btnCmd7" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalShield">Bouclier&nbsp;<i class="fa-regular fa-shield-heart"></i></button>
-                    <button id="btnCmd8" class="btn btn-warning btn-sm" onclick="javascript:cmdPass()">Passer son tour&nbsp;<i class="fa-solid fa-ban"></i></button>
+                    <div class="d-grid gap-1 px-2 pt-1">
+                        <button id="btnCmd1" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveTableau">Mouvement tableau&nbsp;<i class="fa-regular fa-globe"></i></button>
+                        <button id="btnCmd2" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalMoveSector">Mouvement secteur&nbsp;<i class="fa-regular fa-location-dot"></i></button>
+                        <button id="btnCmd3" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalPhaser">Laser&nbsp;<i class="fa-regular fa-raygun"></i></button>
+                        <button id="btnCmd4" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modalTorpedo">Torpille&nbsp;<i class="fa-regular fa-rocket-launch"></i></button>
+                        <button id="btnCmd5" class="btn btn-info btn-sm" onclick="javascript:cmdRadar()">Radar&nbsp;<i class="fa-regular fa-satellite-dish"></i></button>
+                        <button id="btnCmd6" class="btn btn-info btn-sm" onclick="javascript:cmdProbe()">Sonde&nbsp;<i class="fa-regular fa-drone-front"></i></button>
+                        <button id="btnCmd7" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalShield">Bouclier&nbsp;<i class="fa-regular fa-shield-heart"></i></button>
+                        <button id="btnCmd8" class="btn btn-warning btn-sm" onclick="javascript:cmdPass()">Passer son tour&nbsp;<i class="fa-solid fa-ban"></i></button>
+                    </div>
                 </div>
 
             </div>
             <!-- main screen -->
-            <div class="col-9">
+            <div class="col-8">
                 <h2>Tableau</h2>
                 <h5>Voici ce qui est présent à proximité</h5>
                 <div id="tableau" class="font-monospace">

@@ -646,6 +646,12 @@ function manageTextCmd(cmd) {
             case "12":
                 endTurn();
                 break;
+            case "13":
+                generateCollision();
+                break;     
+            case "14":
+                generateDamage();
+                break;                       
             default:
                 addMessage(cmd + " " + TEXT_COMMAND_NOT_FOUND);
                 displayCommand();
@@ -679,7 +685,7 @@ function manageTextCmd(cmd) {
                 document.getElementById("inputShieldRate").value = cmd;
                 cmdShield();
                 resetCmd();
-                break;
+                break;   
             default:
                 addMessage(cmd + " " + TEXT_COMMAND_NOT_FOUND);
                 resetCmd()
