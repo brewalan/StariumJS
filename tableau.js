@@ -673,13 +673,13 @@ class Tableau {
         }  
         
         /* display result */
-        let defaultTxt = "<h5>"+TEXT_PROBE+this.getGalacticTime()+"</h5>";
+        let defaultTxt = "<h5 class='titre'>"+TEXT_PROBE+this.getGalacticTime()+"</h5>";
         let htmlResult = defaultTxt;
         let numKipick = 0;
         /* get objects from sector and display them */
         let sectorObjects = this.getSectorObjects(this.endurci.globalX,this.endurci.globalY);
         /* browse all objects to be displayed in the grid */
-        htmlResult+="<table class='table text-center'>";
+        htmlResult+="<table class='table text-center probeMsg'>";
         htmlResult+="<thead>";
         htmlResult+="<th scope='col'>"+ICON_KIPICK+" "+TEXT_TYPE+"</th>";
         htmlResult+="<th scope='col'>"+ICON_COO_LOCALE+" "+TEXT_COO_LOCALE+"</th>";
@@ -707,7 +707,7 @@ class Tableau {
         /* check if there is some kipicks in the sector */
         if (numKipick==0) {
             htmlResult=defaultTxt;
-            htmlResult+="<p>"+TEXT_NO_KIPICK+"</p>";            
+            htmlResult+="<p class='probeMsg'>"+TEXT_NO_KIPICK+"</p>";            
         } else {     
             /* cost of energy */   
             this.endurci.energyCost(ENERGY_PROBE); 

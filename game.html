@@ -36,7 +36,19 @@
         #tableau,#sector,#info,#damage  {
             line-height: 95%;
         }
-      .navbar-brand {color: white;}   
+        .navbar-brand {color: white;}   
+        @media only screen and (max-width: 640px) {
+            #tableau,#sector {  font-size: 0.6em;  }
+            #info,#damage,#message,p.probeMsg,table.probeMsg {  font-size: 0.8em;  }
+            h2.titre {  font-size: 1.0em;  }   
+            h5.titre {  font-size: 0.9em;  }  
+        }               
+        @media only screen and (min-width: 641px) and (max-width: 900px) {
+            #tableau,#sector {  font-size: 0.8em;  }
+            #info,#damage,#message,p.probeMsg,table.probeMsg {  font-size: 0.9em;  }
+            h2.titre {  font-size: 1.1em;  }   
+            h5.titre {  font-size: 1.0em;  } 
+        }        
     </style>
 </head>
 
@@ -66,15 +78,15 @@
 
         <div class="row">
             <!-- left section part -->
-            <div class="col-4">
-                <h2>Endurci</h2>
-                <h5>Information</h5>
+            <div class="col-3">
+                <h2 class="titre">Endurci</h2>
+                <h5 class="titre">Information</h5>
                 <div id="info">&nbsp;</div>
 
-                <h5>Dégâts</h5>
+                <h5 class="titre">Dégâts</h5>
                 <div id="damage">&nbsp;</div>
 
-                <h5>Commandes</h5>              
+                <h5 class="titre">Commandes</h5>              
                 <div class="d-grid gap-1">
 
                     <div class="input-group input-group-sm mb-6 px-2">
@@ -95,9 +107,9 @@
 
             </div>
             <!-- main screen -->
-            <div class="col-8">
-                <h2>Tableau</h2>
-                <h5>Voici ce qui est présent à proximité</h5>
+            <div class="col-9">
+                <h2 class="titre">Tableau</h2>
+                <h5 class="titre">Voici ce qui est présent à proximité</h5>
                 <div id="tableau" class="font-monospace">
                     <div class="text-center">
                         <div class="spinner-border" role="status">
@@ -105,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-                <h5>Derniers messages</h5>
+                <h5 class="titre">Derniers messages</h5>
                 <div id="message">
                     <div class="text-center">
                         <div class="spinner-border" role="status">
@@ -117,8 +129,8 @@
 
                 <!-- second line -->
                 <div class="row">
-                    <div class="col-4">
-                        <h2>Secteur&nbsp;local</h2>
+                    <div class="col-auto">
+                        <h2 class="titre">Secteur&nbsp;local</h2>
                         <div id="sector" class="font-monospace">
                             <div class="text-center">
                                 <div class="spinner-border" role="status">
@@ -127,7 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-auto">
                         <div id="probe">&nbsp;</div>
                     </div>
                 </div>
