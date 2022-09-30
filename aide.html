@@ -5,6 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>StariumJS</title>
+    <meta name="description" content="Aide en ligne de StariumJS, liste des commandes au clavier">
+    <meta name="author" content="Brewalan Le Dru">     
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">    
     <!-- Bootstrap styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -100,9 +119,10 @@
                 <li>En dessous, les messages du jeu qui contiennent le résumé des dernières actions et leurs résultats.</li>
                 <li>En bas, le secteur qui affiche le détail de ce qui vous entoure. Il s'agit de votre environnement proche.</li>
             </ul>
+            <p class="text-center"><img src="images/ecran.png" width="50%" style="max-width: 100%;"></p>
             <!-- /////////////// -->            
             <h4 id="scrollspyHeading3">Le tableau</h4>
-            <p class="text-center"><img alt="Tableau" src="images/tableau.png" style="max-width: 100%;"></p>
+            <p class="text-center"><img alt="Tableau" src="images/tableau.png" width="80%" style="max-width: 100%;"></p>
             <p>La partie haute de l'écran est appelée le tableau. Il contient des données sur toute la partie de la galaxie dans laquelle vous vous trouvez. Par défaut, vous ne voyez rien car vous êtes en plein territoire Kipick, là où personne n'a encore été. Vous voyagez en territoire inconnu, c'est pourquoi il vous faut de temps en temps scanner au radar l'endroit où vous êtes pour pouvoir détecter d'éventuels ennemis. Tous les secteurs qui apparaissent en gris sont des zones non encore explorées.</p>
             <p>Lorsqu'un secteur a déjà été exploré, le tableau donne ses informations sous forme d'un nombre de 3 chiffres&nbsp;:</p>
             <pre>
@@ -114,12 +134,12 @@
             <p>Le tableau est automatiquement remis à jour si jamais vous détruisez quelque chose dans le secteur. Il peut malheureusement arriver qu'à la suite d'un choc très violent, votre tableau soit totalement anéanti. L'ordinateur se charge alors d'en refaire un le plus vite possible.</p>
             <p>Lorsque vous arrivez sur un secteur que vous n'avez pas encore découvert, le tableau est automatiquement mis à jour en ajoutant ce nouveau secteur à la base de données de l'ordinateur.</p>
             <p>Dans le tableau, le secteur dans lequel se trouve l'Endurci est mis en gras.</p>
-            <p class="text-center"><img alt="Secteur" src="images/tableau2.png" style="max-width: 100%;"></p>     
+            <p class="text-center"><img alt="Secteur" src="images/tableau2.png" width="50%" style="max-width: 100%;"></p>     
             <!-- /////////////// -->
             <h4 id="scrollspyHeading4">Le secteur</h4>
-            <p class="text-center"><img alt="Secteur" src="images/secteur.png" style="max-width: 100%;"></p>
+            <p class="text-center"><img alt="Secteur" src="images/secteur.png" width="50%" style="max-width: 100%;"></p>
             <p>En bas à droite, l'écran blanc est le récapitulatif de ce que vous détectez dans la région la plus proche de vous. L'appareil responsable de cette détection est un radar de courte portée très fragile. Il faudra en prendre soin car ils sont les yeux de votre vaisseau. Chaque secteur s'étend de 10 cases sur 10 cases.</p>
-            <p class="text-center"><img alt="Secteur" src="images/secteur2.png" style="max-width: 100%;"></p>
+            <p class="text-center"><img alt="Secteur" src="images/secteur2.png" width="50%" style="max-width: 100%;"></p>
             <p>Il peut arriver par malheur que cet écran devienne noir à la suite d'un choc important ou si l'énergie est insuffisante pour faire fonctionner correctement les radars de courte distance. Voici alors comment apparaît votre écran. Vous ne voyez que ce qui se situe à seulement une case de votre vaisseau. De cette manière, il est très difficile de voir où se trouvent les ennemis. Il faut faire attention quand les Kipicks jouent car on peut parfois les repérer grâce à la lumière de leur laser.</p> 
             <p>Sur ce radar, apparaît tout ce que l'on peut trouver à proximité immédiate du vaisseau. Chaque objet est représenté par une lettre. Voici les différents objets que vous pouvez trouver&nbsp;:</p>
               <blockquote>
@@ -150,7 +170,7 @@
               </tr></table>
             <!-- /////////////// -->
             <h4 id="scrollspyHeading5">L'écran de contrôle</h4>
-            <p class="text-center"><img alt="Secteur" src="images/controle.png" style="max-width: 100%;"></p>
+            <p class="text-center"><img alt="Secteur" src="images/controle.png" width="50%" style="max-width: 100%;"></p>
             <p>En haut à gauche, se trouvent les données du tableau de bord de votre vaisseau. C'est à cet endroit que vous pouvez vous rendre compte de son état de santé.</p>
             <p><i>Année galactique</i> : vous disposez d'un temps limité pour accomplir votre mission. Ce compteur vous permet de savoir où vous en êtes. Une réforme du temps a été faite. Dans l'espace, le temps ne compte que 10 mois galactiques. Vous remarquerez que le temps s'écoule rapidement puisque nous sommes sur de longues distances.</p>
             <p><i>Coo globales X / Y</i> : il s'agit de votre position sur le tableau. Par défaut, le tableau compte 16 x 16 secteurs.</p>
@@ -178,7 +198,7 @@
             <p><i>Base restante</i> : Ce contrôle vous indique combien de base sont encore disponibles et combien il y en avait au début du jeu.</p>
             
             <h5>Les dégâts</h5>
-            <p class="text-center"><img src="images/cmd10.png" style="max-width: 100%;"></p>
+            <p class="text-center"><img src="images/cmd10.png" width="50%" style="max-width: 100%;"></p>
 
             <p>En plus de l'état de votre vaisseau, vous voyez les différents dommages qu'il a subi. Les éléments qui peuvent être endommagés sont les suivants :</p>
             <blockquote>
@@ -245,7 +265,7 @@
             <h5 id="scrollspyCmd8">Commande 8 : sonde</h5>                        
             <p>La commande 8 vous permet d'envoyer une sonde pour espionner les Kipicks. Elle vous donne de précieuses informations notamment en ce qui concerne leur état énergétique ou leur nombre de torpilles. Elle peut s'avérer utile lorsque vous hésitez entre le laser ou une torpille. Cette commande peut être endommagées.</p>
             <p>Voici le rapport que vous obtenez avec la sonde. La première colonne vous indique le type d'ennemi puis vous avez la position dans le secteur. Ceci peut servir dans le cas où la détection à courte portée est endommagée. Vous voyez ensuite l'énergie, l'énergie du boulier et le nombre de torpilles qu'il reste à l'ennemi.</p>
-            <p class="text-center"><img src="images/cmd8.png" style="max-width: 100%;"></p>
+            <p class="text-center"><img src="images/cmd8.png" width="50%" style="max-width: 100%;"></p>
             <!-- //////////// -->
             <h5 id="scrollspyCmd9">Commande 9 : taux du bouclier</h5>           
             <p>La commande 9 vous permet de changer le taux du bouclier. Ce taux ne sera pas atteint directement car on ne peut pas transférer toute une portion d'énergie en un délai aussi court. Par contre, au fil du temps, les deux énergies convergeront vers le taux que vous avez demandé. Attention de bien garder un petit peu d'énergie pour le reste du vaisseau pour pouvoir continuer la mission.</p>
