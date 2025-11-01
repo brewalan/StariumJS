@@ -712,8 +712,8 @@ function manageTextCmd(cmd) {
 
 /* reset cmd level */
 function resetCmd() {
-    const cmdInputText = document.getElementById("inputGroupCmd");   
-    cmdInputText.innerHTML="<i class='fa-regular fa-terminal'></i>&nbsp;msg";
+    const cmdInputText = document.getElementById("inputGroupCmd");
+    cmdInputText.innerHTML="💻&nbsp;msg";
     cmdLevel=0;
 }
 

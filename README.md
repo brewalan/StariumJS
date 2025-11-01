@@ -1,27 +1,23 @@
 # StariumJS
 <a name="readme-top"></a>
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">StariumJS</h3>
+  <h1>✨ StariumJS</h1>
 
   <p align="center">
-    This project is to create a game in text mode. I had this game on my Apple II in the 80's. My objective is to create exactly the same game using Javascript so it can be accessed from anywhere.
+    Un jeu rétro en mode texte dans l'espace - Inspiré de Trek 73
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    Ce projet recrée un jeu qui tournait sur Apple II dans les années 80, maintenant accessible depuis n'importe quel navigateur moderne grâce à JavaScript.
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/brewalan/StariumJS"><strong>Explorer le code »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/brewalan/StariumJS/issues">Signaler un bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/brewalan/StariumJS/issues">Demander une fonctionnalité</a>
   </p>
 </div>
 
@@ -56,47 +52,110 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## À propos du projet
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+StariumJS est un jeu de stratégie spatiale en mode texte qui se joue entièrement au clavier. Vous incarnez le capitaine d'un vaisseau spatial qui doit pacifier une zone de l'espace en neutralisant tous les vaisseaux ennemis (les Kipicks).
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+### Caractéristiques principales
+
+- 🎮 **Jeu au clavier** : Toutes les commandes sont accessibles au clavier pour une expérience de jeu fluide
+- 🚀 **Rétro gaming** : Inspiration directe des jeux spatiaux des années 70-80
+- 🌐 **100% JavaScript** : Aucune dépendance backend, tout fonctionne dans le navigateur
+- 📱 **Responsive** : Compatible desktop et tablette (expérience optimale sur ordinateur)
+- ✨ **Sans dépendances payantes** : Utilise uniquement des technologies open-source et gratuites
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Structure du projet
 
+```
+StariumJS/
+├── index.html          # Page d'accueil
+├── game.html           # Interface de jeu principale
+├── aide.html           # Documentation et aide en ligne
+├── privacy.html        # Politique de confidentialité
+├── icons.css           # Icônes Unicode (remplace FontAwesome)
+├── starium.js          # Logique principale du jeu
+├── stariumObject.js    # Définition des objets du jeu
+├── settings.js         # Configuration et constantes
+├── tableau.js          # Gestion de la carte spatiale
+├── sitemap.xml         # Plan du site pour SEO
+├── manifest.json       # Web App Manifest
+└── images/             # Ressources graphiques
+```
 
-### Built With
+### Technologies utilisées
 
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+- **HTML5** : Structure sémantique des pages
+- **CSS3** : Styles personnalisés et icônes Unicode
+- **JavaScript (Vanilla)** : Logique du jeu sans framework
+- **Bootstrap 5.2** : Framework CSS pour le responsive design
+- **Unicode Emojis** : Icônes gratuites sans dépendance externe
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Démarrage rapide
 
-Run file index.html on your browser. 
+### Prérequis
 
-### Prerequisites
-
-You just need a browser to execute the game.
+Vous avez seulement besoin d'un navigateur web moderne :
+- Chrome/Edge (recommandé)
+- Firefox
+- Safari
 
 ### Installation
 
-1. Copy all files
-2. Execute index.html
+**Option 1 : Utilisation locale**
+```bash
+# Cloner le repository
+git clone https://github.com/brewalan/StariumJS.git
+
+# Ouvrir le projet
+cd StariumJS
+
+# Lancer index.html dans votre navigateur
+# Sur Mac/Linux
+open index.html
+
+# Sur Windows
+start index.html
+```
+
+**Option 2 : Serveur local (recommandé pour le développement)**
+```bash
+# Utiliser Python 3
+python -m http.server 8000
+
+# Ou avec Node.js
+npx http-server
+
+# Puis ouvrir http://localhost:8000 dans votre navigateur
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- USAGE EXAMPLES -->
-## Usage
+## Comment jouer
 
-Don't know how it could be reused ?
+1. Ouvrez `game.html` dans votre navigateur
+2. Cliquez sur "Nouvelle partie" et configurez la difficulté
+3. Utilisez les commandes au clavier pour contrôler votre vaisseau
+4. Consultez `aide.html` pour la liste complète des commandes
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Commandes principales
+
+- **1** : Mouvement du vaisseau (tableau ou secteur)
+- **2** : Régénération d'énergie
+- **3** : Radar longue portée
+- **4** : Tir laser
+- **5** : Lancement de torpille
+- **8** : Envoyer une sonde
+- **9** : Ajuster le bouclier
+
+_Pour plus de détails, consultez le fichier [aide.html](aide.html)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,12 +164,55 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [x] Migration des icônes FontAwesome vers Unicode (gratuit)
+- [x] Support responsive pour tablettes
+- [x] Ajout d'un système d'aide en ligne
+- [ ] Mode multijoueur local
+- [ ] Sauvegarde de progression
+- [ ] Tableaux de scores
+- [ ] Support PWA (Progressive Web App)
+- [ ] Mode sombre
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+Consultez les [issues ouvertes](https://github.com/brewalan/StariumJS/issues) pour la liste complète des fonctionnalités proposées et bugs connus.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Bonnes pratiques de développement
+
+### Architecture du code
+
+Le projet suit une architecture modulaire :
+
+- **settings.js** : Centralise toutes les constantes et configurations
+- **stariumObject.js** : Définit les classes (Vaisseau, Kipick, Base, etc.)
+- **tableau.js** : Gère la carte spatiale et les secteurs
+- **starium.js** : Contrôleur principal du jeu
+
+### Conventions de code
+
+- **Nommage** : Variables en camelCase, constantes en UPPER_SNAKE_CASE
+- **Commentaires** : Français pour la documentation
+- **Indentation** : 4 espaces
+- **Pas de dépendances externes payantes** : Uniquement des ressources gratuites et open-source
+
+### Développement
+
+Pour contribuer au projet :
+
+1. Fork le projet
+2. Créez une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Testez votre code dans différents navigateurs
+4. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
+5. Push vers la branche (`git push origin feature/AmazingFeature`)
+6. Ouvrez une Pull Request
+
+### Tests
+
+Le jeu peut être testé manuellement :
+- Testez chaque commande (1-12)
+- Vérifiez le responsive sur différentes tailles d'écran
+- Validez les alertes et messages
+- Testez les conditions de victoire/défaite
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -153,17 +255,26 @@ Project Link: [https://github.com/brewalan/StariumJS](https://github.com/brewala
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Remerciements
 
-* []()
-* []()
-* []()
+* [Bootstrap](https://getbootstrap.com) - Framework CSS responsive
+* [Trek 73 / Star Trek](https://en.wikipedia.org/wiki/Star_Trek_(1971_video_game)) - Inspiration originale du jeu
+* [Unicode Consortium](https://unicode.org) - Pour les emojis utilisés comme icônes
+* [GitHub Pages](https://pages.github.com) - Hébergement du projet
+
+## Changelog
+
+### Version 1.1.0 (2025)
+- ✨ Remplacement de FontAwesome par des icônes Unicode gratuites
+- 📝 Documentation améliorée du README
+- 🏗️ Structure de projet documentée
+
+### Version 1.0.0 (2022)
+- 🎮 Version initiale du jeu
+- 🚀 Toutes les fonctionnalités de base implémentées
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+---
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
+**Note importante** : Ce projet n'utilise plus FontAwesome. Les icônes sont maintenant gérées via le fichier `icons.css` qui utilise des caractères Unicode gratuits. Cette migration élimine toute dépendance payante et améliore les performances de chargement.

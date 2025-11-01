@@ -1,0 +1,106 @@
+/*
+ * Icons CSS - Remplacement de FontAwesome par des icônes Unicode/Emoji
+ * Fichier créé pour éliminer la dépendance aux icônes FontAwesome payantes
+ */
+
+/* Classes de base pour les icônes */
+.icon {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-sm { font-size: 1rem; }
+.icon-md { font-size: 1.5rem; }
+.icon-lg { font-size: 2rem; }
+.icon-xl { font-size: 3rem; }
+
+/* Remplacement des icônes FontAwesome par des émojis Unicode */
+.icon-stars::before { content: "✨"; }
+.icon-alien::before { content: "👾"; }
+.icon-party-face::before { content: "🥳"; }
+.icon-computer::before { content: "💻"; }
+.icon-keyboard::before { content: "⌨️"; }
+.icon-party-horn::before { content: "🎉"; }
+.icon-house::before { content: "🏠"; }
+.icon-play::before { content: "▶️"; }
+.icon-info::before { content: "ℹ️"; }
+.icon-envelope::before { content: "✉️"; }
+.icon-github::before { content: "⚙️"; } /* Utilisation d'un engrenage générique */
+.icon-cookie::before { content: "🍪"; }
+.icon-gavel::before { content: "⚖️"; }
+.icon-globe::before { content: "🌍"; }
+.icon-location::before { content: "📍"; }
+.icon-raygun::before { content: "🔫"; }
+.icon-rocket::before { content: "🚀"; }
+.icon-satellite-dish::before { content: "📡"; }
+.icon-drone::before { content: "🚁"; }
+.icon-shield::before { content: "🛡️"; }
+.icon-ban::before { content: "🚫"; }
+.icon-warning::before { content: "⚠️"; }
+.icon-trophy::before { content: "🏆"; }
+.icon-bomb::before { content: "💣"; }
+.icon-terminal::before { content: "💻"; }
+.icon-satellite::before { content: "🛰️"; }
+.icon-starship::before { content: "🚀"; }
+.icon-starfighter::before { content: "✈️"; }
+.icon-planet::before { content: "🪐"; }
+.icon-energy::before { content: "⚡"; }
+.icon-battery::before { content: "🔋"; }
+.icon-crystal::before { content: "🔮"; }
+.icon-radar::before { content: "📡"; }
+.icon-engine::before { content: "⚙️"; }
+.icon-calendar::before { content: "📅"; }
+
+/* Support pour les anciennes classes FontAwesome (compatibilité) */
+i[class*="fa-stars"]::before { content: "✨"; }
+i[class*="fa-alien"]::before { content: "👾"; }
+i[class*="fa-face-party"]::before { content: "🥳"; }
+i[class*="fa-computer"]::before { content: "💻"; }
+i[class*="fa-keyboard"]::before { content: "⌨️"; }
+i[class*="fa-party-horn"]::before { content: "🎉"; }
+i[class*="fa-house"]::before { content: "🏠"; }
+i[class*="fa-circle-play"]::before { content: "▶️"; }
+i[class*="fa-circle-info"]::before { content: "ℹ️"; }
+i[class*="fa-envelope"]::before { content: "✉️"; }
+i[class*="fa-github"]::before { content: "⚙️"; }
+i[class*="fa-cookie"]::before { content: "🍪"; }
+i[class*="fa-gavel"]::before { content: "⚖️"; }
+i[class*="fa-globe"]::before { content: "🌍"; }
+i[class*="fa-location"]::before { content: "📍"; }
+i[class*="fa-raygun"]::before { content: "🔫"; }
+i[class*="fa-rocket"]::before { content: "🚀"; }
+i[class*="fa-satellite-dish"]::before { content: "📡"; }
+i[class*="fa-drone"]::before { content: "🚁"; }
+i[class*="fa-shield"]::before { content: "🛡️"; }
+i[class*="fa-ban"]::before { content: "🚫"; }
+i[class*="fa-triangle-exclamation"]::before { content: "⚠️"; }
+i[class*="fa-trophy"]::before { content: "🏆"; }
+i[class*="fa-bomb"]::before { content: "💣"; }
+i[class*="fa-terminal"]::before { content: "💻"; }
+i[class*="fa-satellite"]::before { content: "🛰️"; }
+i[class*="fa-starship"]::before { content: "🚀"; }
+i[class*="fa-starfighter"]::before { content: "✈️"; }
+i[class*="fa-planet"]::before { content: "🪐"; }
+i[class*="fa-transformer-bolt"]::before { content: "⚡"; }
+i[class*="fa-battery"]::before { content: "🔋"; }
+i[class*="fa-crystal"]::before { content: "🔮"; }
+i[class*="fa-radar"]::before { content: "📡"; }
+i[class*="fa-engine"]::before { content: "⚙️"; }
+i[class*="fa-calendar"]::before { content: "📅"; }
+
+/* Masquer le contenu original des balises <i> pour éviter les doublons */
+i[class*="fa-"] {
+    font-style: normal;
+    display: inline-block;
+    width: auto;
+}
+
+/* Redimensionnement automatique selon les classes FontAwesome existantes */
+i[class*="fa-2x"] { font-size: 2em; }
+i[class*="fa-3x"] { font-size: 3em; }
+i[class*="fa-4x"] { font-size: 4em; }
+i[class*="fa-5x"] { font-size: 5em; }
